@@ -1,0 +1,17 @@
+{% load thumbnail %}
+<html>
+<head>
+    <title>Product</title>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css" />
+
+</head>
+<body>
+<h2>{{ product.en_name }}</h2>
+{% if product.photo %}
+<img src="{{ product.photo|thumbnail_url:'small' }}" />
+{% endif %}
+        <p>{{ product.en_description }}</p>
+        <p>{{ product.sp_description }}</p>
+
+</body>
+</html>

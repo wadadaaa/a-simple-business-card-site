@@ -1,0 +1,85 @@
+{% load thumbnail %}
+{% load flatpages %}
+{% get_flatpages '/index/' as flatpages %}
+{% with flatpages|first as index_page  %}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+    <html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css" />
+        <title>{{ index_page.title }}</title>
+
+
+</head>
+<body>
+<div id="page">
+    <!-- head -->
+    <div id="head" class="block">
+        <div id="logo"><img src="{{ STATIC_URL }}css/images/logo2.png"></div>
+        <div id="cntcts">Tel: 972-2-5901333 <br> Fax: 972-2-5901336</div>
+    </div>
+<!-- navigation -->
+<div id="nav">
+    <div id="nav_activ"><a href="//">Home</a></div>
+    <div class="nav"><a href="/profile/">Profile</a></div>
+    <div class="nav"><a href="/catalog/">Catalog</a></div>
+    <div class="nav"><a href="/representations/">Representations</a></div>
+    <div class="nav"><a href="/contact/">Contact us</a></div>
+</div>
+
+    <!-- slideshow -->
+    <div id="ssh" class="block">
+        <img class="ssh" src="{{ STATIC_URL }}css/images/ssh.png">
+
+
+
+        <!-- catalog -->
+        <div id="ctlg" class="block">
+
+            <div id="txt_ctlg">
+                  {{ index_page.content|safe}}
+            </div>
+
+            {% for catalog in catalogs %}
+
+                  <div class="col_ctlg">
+
+                      <a class="lnk_ctlg" href="{{ catalog.get_absolute_url }}">
+                         {{ catalog.en_name }}<br>
+                         {{ catalog.sp_name }}<br>
+                      </a>
+
+                       <div class="img_ctlg" >
+                           <a href="{{ catalog.get_absolute_url }}">
+                           <img src="{{ catalog.photo|thumbnail_url:'small' }}"></a>
+                       </div>
+
+                  </div>
+
+            {% endfor %}
+
+
+        </div>
+
+    </div>
+
+
+
+
+    <!-- footer -->
+    <div id="ftr" class="block">
+        <div id="txt_ftr">&copy;2012 Zakai Agricultural Know-How & Inputs Ltd.<br>
+            Industrial Area Mishor Adumim Israel 98510<br>
+            Tel: 972-2-5901333 Fax: 972-2-5901336   Email: <a href="mailto:zakai@zakailtd.co.il">zakai@zakailtd.co.il</div>
+        <div id="nav_ftr">
+            <div class="nav_ftr"><a href="/zakai/#">Home</a></div>
+            <div class="nav_ftr"><a href="/profile/">Profile</a></div>
+            <div class="nav_ftr"><a href="/catalog/">Catalog</a></div>
+            <div class="nav_ftr"><a href="/representations/">Representations</a></div>
+            <div class="nav_ftr"><a href="/contact/">Contact us</a></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+{% endwith %}
