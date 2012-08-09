@@ -1,17 +1,65 @@
 {% load thumbnail %}
-<html>
+{% load flatpages %}
+{% get_flatpages '/index/' as flatpages %}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
-    <title>Product</title>
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css" />
+    <title>{{ index_page.title }}</title>
 
 </head>
-<body>
-<h2>{{ product.en_name }}</h2>
-{% if product.photo %}
-<img src="{{ product.photo|thumbnail_url:'small' }}" />
-{% endif %}
-        <p>{{ product.en_description }}</p>
-        <p>{{ product.sp_description }}</p>
 
+
+<body>
+    <div id="page">
+
+        <!-- head -->
+        <div id="head" class="block">
+            <div id="logo"><img src="{{ STATIC_URL }}css/images/logo2.png"></div>
+            <div id="cntcts">Tel: 972-2-5901333 <br> Fax: 972-2-5901336</div>
+        </div>
+        <!-- navigation -->
+        <div id="nav">
+            <div id="nav_activ">Home</div>
+            <div class="nav"><a href="/profile/">Profile</a></div>
+            <div class="nav"><a href="/catalog/">Catalog</a></div>
+            <div class="nav"><a href="/representations/">Representations</a></div>
+            <div class="nav"><a href="/contact/">Contact us</a></div>
+        </div>
+
+        <!-- catalog -->
+
+        <div id="ctlg" class="block">
+
+            <div class="img_ctlg_pr" >
+            {% if product.photo %}
+                <img src="{{ product.photo|thumbnail_url:'small' }}" />
+            {% endif %}
+            </div>
+
+             <div id="txt_ctlg_pr">
+                        <h2>{{ product.en_name }}</h2>
+
+                         <p>{{ product.en_description }}</p>
+                         <p>{{ product.sp_description }}</p>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <div id="ftr" class="block">
+            <div id="txt_ftr">&copy;2012 Zakai Agricultural Know-How & Inputs Ltd.<br>
+                Industrial Area Mishor Adumim Israel 98510<br>
+                Tel: 972-2-5901333 Fax: 972-2-5901336   Email: <a href="mailto:zakai@zakailtd.co.il">zakai@zakailtd.co.il</div>
+            <div id="nav_ftr">
+                <div class="nav_ftr"><a href="/zakai/#">Home</a></div>
+                <div class="nav_ftr"><a href="/profile/">Profile</a></div>
+                <div class="nav_ftr"><a href="/catalog/">Catalog</a></div>
+                <div class="nav_ftr"><a href="/representations/">Representations</a></div>
+                <div class="nav_ftr"><a href="/contact/">Contact us</a></div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

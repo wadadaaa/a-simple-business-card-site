@@ -95,6 +95,12 @@ div {
     line-height: 1.5;
     text-align: justify;
 }
+#txt_ctlg_pr{
+
+    font-size: 16px;
+    line-height: 1.5;
+
+}
 
 .col_ctlg {
     display: inline-block;
@@ -111,6 +117,13 @@ div {
 .img_ctlg {
     display: block;
     margin-top: 40px;
+}
+.img_ctlg_pr{
+   /* border: 5px solid #c2c2c2; /* Параметры рамки */
+    height: 400px;
+    width: 400px;
+    padding: 50px;
+    margin-left: 50px;
 }
 
 #ftr {
