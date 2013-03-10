@@ -29,34 +29,38 @@
     </div>
 
 <!--catalog-->
-<div id="ctlg" class="block">
-<ul>
-    {% for catalog in catalogs %}
-        <div class="col_ctlg">
-            <a class="lnk_ctlg" href="{{ catalog.get_absolute_url }}">
-            <li>{{ catalog.en_name }}</li></a>
+<p>Catalogs</p>
 
 
-            <div class="img_ctlg" >
-                    <a href="{{ catalog.get_absolute_url }}">
-                    <img src="{{ catalog.photo|thumbnail_url:'small' }}"></a>
-            </div>
+        <div id="ctlg" class="block">
 
-            {% with catalog.get_children as childs %}
-                 {% if childs %}
-                     <ul>
-                 {% for child in childs %}
-                        <li><a href="{{ child.get_absolute_url }}">{{ child.en_name }}</a></li>
 
-                {% endfor %}
-              </ul>
-        {% endif %}
 
-        {% endwith %}
+
+                 {% for catalog in catalogs %}
+                        <div class="col_ctlg">
+
+                                 <a class="lnk_ctlg" href="{{ catalog.get_absolute_url }}">
+
+                                    <li>{{ catalog.en_name }}</li>
+                                     <li>{{ catalog.sp_name }}</li></a>
+
+
+
+                            <div class="img_ctlg" >
+                                            <a href="{{ catalog.get_absolute_url }}">
+                                            <img src="{{ catalog.photo|thumbnail_url:'large' }}"></a>
+                             </div>
+
+
+
+                         </div>
+                   {% endfor %}
+
+
+
         </div>
-    {% endfor %}
-</ul>
-</div>
+
 
     <!-- footer -->
     <div id="ftr" class="block">

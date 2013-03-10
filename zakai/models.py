@@ -7,7 +7,7 @@ from mptt.models import MPTTModel, TreeForeignKey
 class Catalog(MPTTModel):
     en_name = models.CharField(max_length=64)
     sp_name = models.CharField(max_length=64)
-    slug = models.SlugField(max_length=160)
+    slug = models.SlugField(unique=True)
     photo = ThumbnailerImageField(upload_to="catalog_pic", blank=True)
     parent = TreeForeignKey('self', null=True, blank=True, related_name='children')
 
@@ -21,7 +21,7 @@ class Catalog(MPTTModel):
 class Product(models.Model):
     en_name = models.CharField(max_length=100)
     sp_name = models.CharField(max_length=100)
-    slug = models.SlugField(max_length=160)
+    slug = models.SlugField(unique=True)
     catalog = models.ForeignKey(Catalog)
 
     en_description = models.TextField(blank=True, help_text="Describe product in english")
