@@ -1,0 +1,20 @@
+*.py[co]
+*.db
+*local.py*
+.sass-cache
+.svn
+.idea
+.DS_Store
+*.komodoproject
+.ropeproject
+.codeintel
+.venv
+nosetests.xml
+*.old
+
+# Aptana/Eclipse project dirs and files
+.project
+.pydevproject
+.settings/
+
+zakailtd/media/*

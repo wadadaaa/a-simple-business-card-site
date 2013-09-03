@@ -1,0 +1,1 @@
+web: gunicorn boom2_1.wsgi
