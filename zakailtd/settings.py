@@ -1,6 +1,14 @@
 # Django settings for zakailtd project.
+
+
 import os
 import os.path
+import dj_database_url
+
+DATABASES = {
+    'default': dj_database_url.config()
+}
+
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.abspath(os.path.dirname(__file__)))) 
 
@@ -8,17 +16,27 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('admin', 'lopatinski@gmail.com'),
+    ('Anna Lopatinski', 'lopatinski@gmail.com'),
 )
 
 MANAGERS = ADMINS
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(PROJECT_ROOT, 'zakailtd.db'),
-    }
-}
+
+#DATABASES = {
+#       'default': {
+#       'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(PROJECT_ROOT, 'zakailtd.db'),
+#   }
+#}
+#DATABASE_ENGINE = 'django.db.backends.postgresql_psycopg2'
+#DATABASE_NAME = 'ddnp15jj5vfu94'
+#DATABASE_USER = 'akbhnlvclallia'
+#DATABASE_PASSWORD = 'cqJ7rodjDt3mNQoR4w9aK8lYCi'
+#DATABASE_HOST = 'ec2-54-235-155-40.compute-1.amazonaws.com'
+#DATABASE_PORT = '5432'
+
+
+
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -128,12 +146,14 @@ INSTALLED_APPS = (
     'mptt',
     'zakai',
     'easy_thumbnails',
+    'storages',
     #'django.contrib.sitemaps',
 )
+WHOOSH_INDEX = os.path.join(PROJECT_ROOT, 'whoosh/')
 
 THUMBNAIL_ALIASES = {
     '': {
-        'small': {'size' : (200, 200), 'crop': 'smart'},
+        'small': {'size' : (150, 150), 'crop': 'smart'},
         'large': {'size' : (400, 400), 'crop': 'smart'},
 
 

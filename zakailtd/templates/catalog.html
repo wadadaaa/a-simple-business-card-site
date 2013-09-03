@@ -9,62 +9,95 @@
 
     <title>{{ index_page.title }}</title>
 
-
+      
 </head>
 <body>
 <div id="page">
+
     <!-- head -->
     <div id="head" class="block">
+
         <div id="logo"><img src="{{ STATIC_URL }}css/images/logo2.png"></div>
         <div id="cntcts">Tel: 972-2-5901333 <br> Fax: 972-2-5901336</div>
     </div>
 
+
+
     <!-- navigation -->
     <div id="nav">
-        <div id="nav_activ">Home</div>
+        <div id="nav_activ"><a href="/">Home</div>
         <div class="nav"><a href="/profile/">Profile</a></div>
         <div class="nav"><a href="/catalog/">Catalog</a></div>
         <div class="nav"><a href="/representations/">Representations</a></div>
         <div class="nav"><a href="/contact/">Contact us</a></div>
     </div>
 
-    <h2>{{ catalog.en_name }}</h2>
-Catalog in catalog html
 
+    <!-- slideshow -->
+    <div id="ssh" class="block">
 
-    <div id="ctlg" class="block">
+        <!-- catalog -->
+        <div id="ctlg" class="block">
 
-            <div class="products_list">
-            {% if childs %}
+            <div id="txt_ctlg">
 
-                    {% for child in childs %}
+                <!-- content -->
 
-
-
-
-                                    <li>
-
-                                        <img src="{{ child.photo|thumbnail_url:'small' }}">
-                                        <div><span><a href="{{ child.get_absolute_url }}">{{ child.en_name }}</a></span></div>
-                                    </li>
+                <div class="page_path">
+                    <a href="/">Home</a>
+                    >
+                    <a href="{{ catalog.get_absolute_url }}">{{ catalog.en_name }} </a>                </div>
 
 
 
-                    {% endfor %}
+                <h1>{{ catalog.en_name }}</h1>
 
-            {% endif %}
+                <div class="catalog_list">
 
-            {% if catalog.product_set.all %}
-                <ul>
-                    {% for product in catalog.product_set.all %}
-                        <img src="{{ product.photo|thumbnail_url:'small' }}">
-                        <li><a href="{{ product.get_absolute_url }}">{{ product.en_name }}</a></li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
+
+                    {% if catalog.product_set.all %}
+
+
+                        {% for product in catalog.product_set.all %}
+
+                            <li class="product_li">
+
+                                <img src="{{ product.photo|thumbnail_url:'small' }}">
+
+                                <a href="{{ product.get_absolute_url }}">{{ product.en_name }}</a>
+                            </li>
+
+                        {% endfor %}
+
+                    {% endif %}
+
+                </div>
+
+
+                <div class="catalog_list">
+
+
+                    {% if childs %}
+
+                        {% for child in childs %}
+                            <li class="product_li">
+                                <img src="{{ child.photo|thumbnail_url:'small' }}">
+
+                                <a href="{{ child.get_absolute_url }}">{{ child.en_name }} </a>
+                            </li>
+
+                        {% endfor %}
+
+                    {% endif %}
+
+
+                </div>
+
             </div>
+
+        </div>
+
     </div>
-</div>
 
 
 
@@ -74,12 +107,17 @@ Catalog in catalog html
         Industrial Area Mishor Adumim Israel 98510<br>
         Tel: 972-2-5901333 Fax: 972-2-5901336   Email: <a href="mailto:zakai@zakailtd.co.il">zakai@zakailtd.co.il</div>
     <div id="nav_ftr">
-        <div class="nav_ftr"><a href="/zakai/#">Home</a></div>
+        <div class="nav_ftr"><a href="/">Home</a></div>
         <div class="nav_ftr"><a href="/profile/">Profile</a></div>
         <div class="nav_ftr"><a href="/catalog/">Catalog</a></div>
         <div class="nav_ftr"><a href="/representations/">Representations</a></div>
         <div class="nav_ftr"><a href="/contact/">Contact us</a></div>
     </div>
 </div>
+
+
+
+</div>
 </body>
+
 </html>

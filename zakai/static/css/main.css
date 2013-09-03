@@ -1,6 +1,6 @@
 body {
     margin: 0px;
-    background: url(/static/css/images/bg3.png);
+    background: url(images/bg3.png);
     font-family: "Trebuchet MS";
     background-attachment: fixed;
 
@@ -72,6 +72,7 @@ div {
     border-radius: 10px;
     padding: 3px 15px;
     margin-right: -10px;
+    margin-left: 13px;
 }
 
 .ssh {
@@ -87,18 +88,22 @@ div {
 }
 
 #txt_ctlg {
-    padding: 30px 40px;
+    padding: 30px 40px 30px 40px;
     display: inline-block;
-    width: 100%;
     font-family: "Trebuchet MS";
     font-size: 16px;
     line-height: 1.5;
     text-align: justify;
+    
+    
+
+
 }
 #txt_ctlg_pr{
 
     font-size: 16px;
     line-height: 1.5;
+
 
 }
 
@@ -113,6 +118,7 @@ div {
     color: #006699;
     font-size: 18px;
     line-height: 1.2;
+
 }
 
 .img_ctlg {
@@ -120,7 +126,7 @@ div {
     margin-top: 40px;
 }
 .img_ctlg_pr{
-   /* border: 5px solid #c2c2c2; /* Параметры рамки */
+    /* border: 5px solid #c2c2c2; /* Параметры рамки */
     height: 400px;
     width: 400px;
     padding: 50px;
@@ -132,6 +138,7 @@ div {
     height: 85px;
     background: #003300;
     margin-bottom: 0px;
+
 }
 
 #txt_ftr {
@@ -178,7 +185,7 @@ div {
 .products_list {padding:0;list-style-type:none;}
 .products_list:after {content: '.';display: block;clear:both;visibility: hidden;height:0;font-size:0;}
 .products_list li {display:-moz-inline-box;display:inline-block;width:200px;height:200px;margin-right:20px;margin-bottom:20px;
-                   margin-top: 20px;margin-left: 20px; border: 5px solid #c2c2c2;}
+    margin-top: 20px;margin-left: 20px; border: 5px solid #c2c2c2;}
 .products_list li .info {color:#999;}
 .products_list li .info a {color:#999;}
 
@@ -188,6 +195,119 @@ div {
 .products:after {content: '.';display: block;clear:both;visibility: hidden;height:0;font-size:0;}
 .products li {float:left;margin-right:20px;margin-bottom:10px;}
 
+/* Class of images, left block */
+.curcuma_left {
+    float: left;
+    width: 290px;
+    /*border: 2px solid blue;*/
+}
 
+/* Class of decriprtion, right block */
+.curcuma_right {
+    float: right;
+    width: 570px;
 
+    /*border: 2px solid gray;*/
+}
 
+/* CSS style of zoomed image. ID of <img> */
+#image_main {
+    border: 10px solid #ffffff;
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.3); /* Для Firefox */
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.3); /* Для Safari и Chrome */
+    box-shadow: 0 0 10px rgba(0,0,0,0.3); /* Параметры тени */
+}
+
+/* Horizontal list of image previews */
+.chs_image_list > div {
+    padding-top: 15px;
+    display: inline-block;
+    width: 60px;
+    float: left;
+}
+
+/* H1 of description */
+h1 {
+    font: 20pt Trebuchet MS;
+    color: #d70101;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/* H2 of description */
+h2 {
+    font: italic 14pt Trebuchet MS;
+    color: #006600;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+/* Paragraph of description */
+.curcuma_right > p {
+    font: 10pt Trebuchet MS;
+    color: #000000;
+    margin-left: 5px;
+    margin-top: 15px;
+    margin-right: 0px;
+}
+
+/* The address line of page     some > some > this page */
+.page_path {
+    font: 12pt Trebuchet MS;
+    color: #006699;
+    margin-bottom: 20px;
+}
+
+/* Links of page path */
+.page_path > a {
+    font: 12pt Trebuchet MS;
+    color: #006699;
+}
+
+.catalog_list {
+    padding-top: 0px;
+    #float: left;
+
+}
+
+.catalog_list_item {
+    display: inline-block;
+    width: 170px;
+    margin: 0px;
+    text-align: center;
+    padding-top: 10px;
+    margin-top: 0px;
+    margin: 0 10px 5px 0;
+    vertical-align: top;
+    float: left;
+
+}
+
+.catalog_list_item > img {
+    border: 6px solid #ffffff;
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.3); /* Для Firefox */
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.3); /* Для Safari и Chrome */
+    box-shadow: 0 0 10px rgba(0,0,0,0.3); /* Параметры тени */
+    /*vertical-align: top;*/
+
+}
+
+.catalog_list_item > a {
+    font: 12pt Georgia;
+    color: #006699;
+}
+.product_li{
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.3); /* Для Firefox */
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.3); /* Для Safari и Chrome */
+    box-shadow: 0 0 10px rgba(0,0,0,0.3); /* Параметры тени */
+    /*vertical-align: top;*/
+    display: inline-block;
+    width: 170px;
+    margin: 0px;
+    text-align: center;
+    padding-top: 10px;
+    margin-top: 0px;
+    margin: 10 10px 5px 0;
+    vertical-align: top;
+
+}
