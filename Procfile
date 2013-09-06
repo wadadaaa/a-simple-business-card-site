@@ -1,1 +1,1 @@
-web: gunicorn zakai.wsgi
+web: gunicorn zakailtd.wsgi
