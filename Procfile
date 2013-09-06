@@ -1,1 +1,1 @@
-web: gunicorn boom2_1.wsgi
+web: gunicorn zakai.wsgi
