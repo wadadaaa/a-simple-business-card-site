@@ -37,6 +37,12 @@ urlpatterns = patterns('',
     #(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
+
+    (r'^static/(?P<path>.*)$', "django.contrib.staticfiles.views.serve", {'document_root': settings.STATIC_ROOT}),
+
+    (r'^media/(?P<path>.*)$', "django.contrib.staticfiles.views.serve", {'document_root': settings.MEDIA_ROOT}),
+
+
 )
 
 if settings.DEBUG:
