@@ -55,6 +55,6 @@ def delete_filefield(sender, **kwargs):
     try:
         image = kwargs.get('instance')
         storage = image.photo.storage
-        storage.delete(image.photo.path)
+        storage.delete(storage=queued_s3storage)
     except Exception:
         pass
