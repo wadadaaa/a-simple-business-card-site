@@ -25,7 +25,7 @@ MANAGERS = ADMINS
 #DATABASES = {
 #       'default': {
 #       'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': os.path.join(PROJECT_ROOT, 'zakailtd.db'),
+#       'NAME': os.path.join(PROJECT_ROOT, 'zakailtd.db'),
 #   }
 #}
 #DATABASE_ENGINE = 'django.db.backends.postgresql_psycopg2'
@@ -147,6 +147,7 @@ INSTALLED_APPS = (
     'zakai',
     'easy_thumbnails',
     'storages',
+    'queued_storage',
     #'django.contrib.sitemaps',
 )
 WHOOSH_INDEX = os.path.join(PROJECT_ROOT, 'whoosh/')
