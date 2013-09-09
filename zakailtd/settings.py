@@ -4,6 +4,15 @@
 import os
 import os.path
 import dj_database_url
+import djcelery
+
+djcelery.setup_loader()
+CELERY_ALWAYS_EAGER = True
+CELERY_EAGER_PROPAGATES_EXCEPTIONS = True
+
+CELERY_RESULT_BACKEND = "database"
+CELERY_RESULT_DBURI = "sqlite:///mydatabase.db"
+
 
 DATABASES = {
     'default': dj_database_url.config()
@@ -148,6 +157,7 @@ INSTALLED_APPS = (
     'easy_thumbnails',
     'storages',
     'queued_storage',
+    'djcelery',
     #'django.contrib.sitemaps',
 )
 WHOOSH_INDEX = os.path.join(PROJECT_ROOT, 'whoosh/')
