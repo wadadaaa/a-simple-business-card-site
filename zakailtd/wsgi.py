@@ -14,8 +14,11 @@ framework.
 
 """
 import os
+import djcelery
 from django.core.wsgi import get_wsgi_application
 #from dj_static import Cling
+
+djcelery.setup_loader()
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "zakailtd.settings")
 
