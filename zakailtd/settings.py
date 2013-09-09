@@ -5,10 +5,14 @@ import os
 import os.path
 import dj_database_url
 import djcelery
+import s3utils
+
 
 djcelery.setup_loader()
 CELERY_ALWAYS_EAGER = True
 CELERY_EAGER_PROPAGATES_EXCEPTIONS = True
+DEFAULT_FILE_STORAGE = 's3utils.MediaRootS3BotoStorage'
+STATICFILES_STORAGE = 's3utils.StaticRootS3BotoStorage'
 
 CELERY_RESULT_BACKEND = "database"
 CELERY_RESULT_DBURI = "sqlite:///mydatabase.db"
