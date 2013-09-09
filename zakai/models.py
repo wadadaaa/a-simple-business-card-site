@@ -14,7 +14,7 @@ class Catalog(MPTTModel):
     en_name = models.CharField(max_length=64)
     sp_name = models.CharField(max_length=64)
     slug = models.SlugField(unique=True)
-    photo = ThumbnailerImageField(storage=queued_s3storage, blank=True)
+    photo = ThumbnailerImageField(upload_to="catalog_pic",storage=queued_s3storage, blank=True)
     parent = TreeForeignKey('self', null=True, blank=True, related_name='children')
 
     def __unicode__(self):
@@ -32,7 +32,7 @@ class Product(models.Model):
 
     en_description = models.TextField(blank=True, help_text="Describe product in english")
     sp_description = models.TextField(blank=True, help_text="Describe product in spanish")
-    photo = ThumbnailerImageField(storage=queued_s3storage, blank=True)
+    photo = ThumbnailerImageField(upload_to="product_pic", blank=True)
 
     def __unicode__(self):
         return self.en_name
@@ -46,7 +46,7 @@ def delete_filefield(sender, **kwargs):
     try:
         image = kwargs.get('instance')
         storage = image.photo.storage
-        storage.delete(storage=queued_s3storage)
+        storage.delete(image.photo.path)
     except Exception:
         pass
 
@@ -55,6 +55,6 @@ def delete_filefield(sender, **kwargs):
     try:
         image = kwargs.get('instance')
         storage = image.photo.storage
-        storage.delete(storage=queued_s3storage)
+        storage.delete(image.photo.path)
     except Exception:
         pass
