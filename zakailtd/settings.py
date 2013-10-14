@@ -3,33 +3,33 @@
 
 import os
 import os.path
-import dj_database_url
-import djcelery
-import s3utils
+#import dj_database_url
+#import djcelery
+#import s3utils
 
-AWS_ACCESS_KEY_ID = os.environ.get('AKIAIXCBEASBXJEJ6OZQ')
-AWS_SECRET_ACCESS_KEY = os.environ.get('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')
-AWS_STORAGE_BUCKET_NAME = '<forheroku>'
+#AWS_ACCESS_KEY_ID = os.environ.get('AKIAIXCBEASBXJEJ6OZQ')
+#AWS_SECRET_ACCESS_KEY = os.environ.get('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')
+#AWS_STORAGE_BUCKET_NAME = '<forheroku>'
 
-STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+#STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
-STATIC_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
-ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
+#STATIC_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
+# = STATIC_URL + 'admin/'
 
-djcelery.setup_loader()
-CELERY_ALWAYS_EAGER = True
-CELERY_EAGER_PROPAGATES_EXCEPTIONS = True
-DEFAULT_FILE_STORAGE = 's3utils.MediaRootS3BotoStorage'
-STATICFILES_STORAGE = 's3utils.StaticRootS3BotoStorage'
+#djcelery.setup_loader()
+#CELERY_ALWAYS_EAGER = True
+#CELERY_EAGER_PROPAGATES_EXCEPTIONS = True
+#DEFAULT_FILE_STORAGE = 's3utils.MediaRootS3BotoStorage'
+#STATICFILES_STORAGE = 's3utils.StaticRootS3BotoStorage'
 
-CELERY_RESULT_BACKEND = "database"
-CELERY_RESULT_DBURI = "sqlite:///mydatabase.db"
+#CELERY_RESULT_BACKEND = "database"
+#CELERY_RESULT_DBURI = "sqlite:///mydatabase.db"
 
 
-DATABASES = {
-    'default': dj_database_url.config()
-}
+#DATABASES = {
+#    'default': dj_database_url.config()
+#}
 
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.abspath(os.path.dirname(__file__)))) 
@@ -44,12 +44,12 @@ ADMINS = (
 MANAGERS = ADMINS
 
 
-#DATABASES = {
-#       'default': {
-#       'ENGINE': 'django.db.backends.sqlite3',
-#       'NAME': os.path.join(PROJECT_ROOT, 'zakailtd.db'),
-#   }
-#}
+DATABASES = {
+       'default': {
+       'ENGINE': 'django.db.backends.sqlite3',
+       'NAME': os.path.join(PROJECT_ROOT, 'zakailtd.db'),
+   }
+}
 #DATABASE_ENGINE = 'django.db.backends.postgresql_psycopg2'
 #DATABASE_NAME = 'ddnp15jj5vfu94'
 #DATABASE_USER = 'akbhnlvclallia'
@@ -144,7 +144,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'zakailtd.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'zakailtd.wsgi.application'
+#WSGI_APPLICATION = 'zakailtd.wsgi.application'
 
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROOT,'templates'),
