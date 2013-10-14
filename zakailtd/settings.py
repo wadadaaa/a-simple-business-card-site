@@ -7,6 +7,15 @@ import dj_database_url
 import djcelery
 import s3utils
 
+AWS_ACCESS_KEY_ID = os.environ.get('AKIAIXCBEASBXJEJ6OZQ')
+AWS_SECRET_ACCESS_KEY = os.environ.get('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')
+AWS_STORAGE_BUCKET_NAME = '<forheroku>'
+
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+
+STATIC_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
+ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
 djcelery.setup_loader()
 CELERY_ALWAYS_EAGER = True
