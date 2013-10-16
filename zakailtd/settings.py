@@ -32,7 +32,7 @@ import os.path
 #}
 
 
-PROJECT_ROOT = os.path.abspath(os.path.join(os.path.abspath(os.path.dirname(__file__)))) 
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.abspath(os.path.dirname(__file__))))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -168,9 +168,9 @@ INSTALLED_APPS = (
     'mptt',
     'zakai',
     'easy_thumbnails',
-    'storages',
-    'queued_storage',
-    'djcelery',
+    #'storages',
+    #'queued_storage',
+    #'djcelery',
     #'django.contrib.sitemaps',
 )
 WHOOSH_INDEX = os.path.join(PROJECT_ROOT, 'whoosh/')
@@ -185,6 +185,12 @@ THUMBNAIL_ALIASES = {
 
         }
 }
+try:
+    from .local_settings import *
+except ImportError:
+    pass
 
-  
+
+
+
 
