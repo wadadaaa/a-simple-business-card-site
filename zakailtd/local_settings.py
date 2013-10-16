@@ -32,7 +32,7 @@ import os.path
 #}
 
 
-PROJECT_ROOT = os.path.abspath(os.path.join(os.path.abspath(os.path.dirname(__file__)))) 
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.abspath(os.path.dirname(__file__))))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -170,7 +170,7 @@ INSTALLED_APPS = (
     'easy_thumbnails',
     'storages',
     'queued_storage',
-    'djcelery',
+    #'djcelery',
     #'django.contrib.sitemaps',
 )
 WHOOSH_INDEX = os.path.join(PROJECT_ROOT, 'whoosh/')
