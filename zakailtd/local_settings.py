@@ -175,8 +175,6 @@ INSTALLED_APPS = (
 )
 WHOOSH_INDEX = os.path.join(PROJECT_ROOT, 'whoosh/')
 
-
-
 THUMBNAIL_ALIASES = {
     '': {
         'small': {'size' : (150, 150), 'crop': 'smart'},
@@ -185,6 +183,4 @@ THUMBNAIL_ALIASES = {
 
         }
 }
-
-  
 
