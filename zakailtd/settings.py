@@ -2,6 +2,7 @@
 
 
 import os
+import sys
 import os.path
 #import dj_database_url
 #import djcelery
@@ -30,7 +31,7 @@ import os.path
 #DATABASES = {
 #    'default': dj_database_url.config()
 #}
-
+PROJECT_DIR = os.path.dirname((os.path.dirname((os.path.dirname(__file__)))))
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.abspath(os.path.dirname(__file__))))
 
@@ -44,12 +45,7 @@ ADMINS = (
 MANAGERS = ADMINS
 
 
-DATABASES = {
-       'default': {
-       'ENGINE': 'django.db.backends.sqlite3',
-       'NAME': os.path.join(PROJECT_ROOT, 'zakailtd.db'),
-   }
-}
+
 #DATABASE_ENGINE = 'django.db.backends.postgresql_psycopg2'
 #DATABASE_NAME = 'ddnp15jj5vfu94'
 #DATABASE_USER = 'akbhnlvclallia'
