@@ -13,17 +13,22 @@ middleware here, or combine a Django application with an application of another
 framework.
 
 """
+
 import os
-#import djcelery
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "zakailtd.settings")
 from django.core.wsgi import get_wsgi_application
+application = get_wsgi_application()
+
+
+
+#import djcelery
 #from dj_static import Cling
 
 #djcelery.setup_loader()
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "zakailtd.settings")
+
 
 #application = Cling(get_wsgi_application())
-application = get_wsgi_application()
 
 # This application object is used by any WSGI server configured to use this
 # file. This includes Django's development server, if the WSGI_APPLICATION
