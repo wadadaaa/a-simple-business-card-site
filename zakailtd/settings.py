@@ -7,7 +7,17 @@ import os.path
 #import dj_database_url
 #import djcelery
 #import s3utils
+# settings.py
 
+
+def map_path(directory_name):
+    return os.path.join(os.path.dirname(__file__),
+        '../' + directory_name).replace('\\', '/')
+
+
+TEMPLATE_DIRS = (
+    map_path('templates'),
+)
 #AWS_ACCESS_KEY_ID = os.environ.get('AKIAIXCBEASBXJEJ6OZQ')
 #AWS_SECRET_ACCESS_KEY = os.environ.get('D8R+zxA5kTedAtBMdEzRBBGkJZRu9jCrAtNykWWf')
 #AWS_STORAGE_BUCKET_NAME = '<forheroku>'
