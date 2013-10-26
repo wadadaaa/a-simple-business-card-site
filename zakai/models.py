@@ -3,18 +3,19 @@ from django.db.models.signals import post_delete
 from django.dispatch.dispatcher import receiver
 from easy_thumbnails.fields import ThumbnailerImageField
 from mptt.models import MPTTModel, TreeForeignKey
-from queued_storage.backends import QueuedStorage
-from storages.backends.s3boto import S3BotoStorage
-
+#from queued_storage.backends import QueuedStorage
+#from storages.backends.s3boto import S3BotoStorage
+'''
 queued_s3storage = QueuedStorage(
     'django.core.files.storage.FileSystemStorage',
     'storages.backends.s3boto.S3BotoStorage')
+'''
 
 class Catalog(MPTTModel):
     en_name = models.CharField(max_length=64)
     sp_name = models.CharField(max_length=64)
     slug = models.SlugField(unique=True)
-    photo = ThumbnailerImageField(upload_to="catalog_pic",storage=queued_s3storage, blank=True)
+    photo = ThumbnailerImageField(upload_to="catalog_pic", blank=True)
     parent = TreeForeignKey('self', null=True, blank=True, related_name='children')
 
     def __unicode__(self):
