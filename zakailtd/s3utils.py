@@ -1,4 +1,5 @@
 __author__ = 'annalopatinski'
+'''
 from storages.backends.s3boto import S3BotoStorage
 from django.utils.functional import SimpleLazyObject
 import os
@@ -9,3 +10,5 @@ AWS_STORAGE_BUCKET_NAME = 'static.[website].org'
 
 StaticRootS3BotoStorage = lambda: S3BotoStorage(location='static')
 MediaRootS3BotoStorage  = lambda: S3BotoStorage(location='media')
+
+'''
