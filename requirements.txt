@@ -19,7 +19,7 @@ django-mptt==0.5.5
 django-paging==0.2.5
 django-picklefield==0.3.0
 django-queued-storage==0.6
-django-registration==1.0
+django-registration==3.1.2
 django-social-auth==0.7.25
 django-sphinx==2.2.4
 django-static-compiler==0.3.3
