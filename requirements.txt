@@ -1,5 +1,5 @@
 BeautifulSoup==3.2.1
-Django==1.4
+Django==2.2.24
 Pillow==2.0.0
 Pygments==1.6
 South==0.8.2
